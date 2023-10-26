@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Kalkulator Sederhana</h1>
+        <div class="row mt-3">
+            <div class="col-4">
+                <p>Masukkan angka pertama:</p>
+                <input type="text" id="angka1" class="form-control" placeholder="Angka pertama">
+            </div>
+            <div class="col-4">
+                <p>Pilih operasi:</p>
+                <select id="operasi" class="form-control">
+                    <option value="tambah">Penambahan (+)</option>
+                    <option value="kurang">Pengurangan (-)</option>
+                    <option value="kali">Perkalian (*)</option>
+                    <option value="bagi">Pembagian (/)</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <p>Masukkan angka kedua:</p>
+                <input type="text" id="angka2" class="form-control" placeholder="Angka kedua">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <button onclick="hitung()" class="btn btn-primary">Hitung</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <p>Hasil: <span id="hasil"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2023. Credit by <a href="https://instagram.com/jamuuurrrr?igshid=MzMyNGUyNmU2YQ==">M. ALDI SAPUTRA</a></p>
+    </footer>
+
+    <!-- Tautan ke Bootstrap JavaScript dan jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function hitung() {
+            // Ambil nilai angka pertama, operasi, dan angka kedua dari input
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var operasi = document.getElementById("operasi").value;
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+
+            // Hitung berdasarkan operasi yang dipilih
+            var hasil;
+            if (operasi === "tambah") {
+                hasil = angka1 + angka2;
+            } else if (operasi === "kurang") {
+                hasil = angka1 - angka2;
+            } else if (operasi === "kali") {
+                hasil = angka1 * angka2;
+            } else if (operasi === "bagi") {
+                if (angka2 === 0) {
+                    alert("Pembagian dengan nol tidak diizinkan.");
+                    return;
+                }
+                hasil = angka1 / angka2;
+            }
+
+            // Tampilkan hasil
+            document.getElementById("hasil").textContent = hasil;
+        }
+    </script>
+</body>
+</html>

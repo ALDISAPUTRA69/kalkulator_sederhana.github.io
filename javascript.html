@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Saya</title>
+    <!-- Tambahkan tautan ke Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Website Saya</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Beranda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/javascript">JavaScript</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Luas Persegi Panjang</h1>
+        <button class="btn btn-primary" onclick="hitungLuasPersegiPanjang()">Hitung Luas</button>
+        <p id="luas"></p>
+    </div>
+
+    <div class="container mt-5">
+        <h1>Pemeriksaan Angka</h1>
+        <button class="btn btn-primary" onclick="pemeriksaanAngka()">Cek Angka</button>
+        <p id="hasilPemeriksaan"></p>
+    </div>
+
+    <!-- Tambahkan tautan ke Bootstrap JavaScript (Popper.js dan jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript untuk menghitung luas persegi panjang
+        function hitungLuasPersegiPanjang() {
+            var panjang = parseFloat(prompt("Masukkan panjang:"));
+            var lebar = parseFloat(prompt("Masukkan lebar:"));
+            var luas = panjang * lebar;
+            document.getElementById("luas").innerHTML = "Luas Persegi Panjang: " + luas;
+        }
+
+        // JavaScript untuk memeriksa apakah angka positif, negatif, atau nol
+        function pemeriksaanAngka() {
+            var x = parseFloat(prompt("Masukkan angka:"));
+            if (x > 0) {
+                document.getElementById("hasilPemeriksaan").innerHTML = x + " adalah angka positif.";
+            } else if (x < 0) {
+                document.getElementById("hasilPemeriksaan").innerHTML = x + " adalah angka negatif.";
+            } else {
+                document.getElementById("hasilPemeriksaan").innerHTML = x + " adalah nol.";
+            }
+        }
+    </script>
+</body>
+</html>
